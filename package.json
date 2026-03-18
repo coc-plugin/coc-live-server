@@ -1,0 +1,51 @@
+{
+  "name": "coc-live-server",
+  "version": "0.0.1",
+  "description": "Launch a development local Server with live reload feature for static & dynamic pages.",
+  "author": "cyl <a1008611abcd@126.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "coc.nvim"
+  ],
+  "engines": {
+    "coc": "^0.0.82"
+  },
+  "scripts": {
+    "watch": "node esbuild.mjs --watch",
+    "build": "node esbuild.mjs",
+    "prepare": "node esbuild.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "coc.nvim": "^0.0.83-next.18",
+    "esbuild": "^0.19.8",
+    "typescript": "^5.3.3"
+  },
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "coc-live-server configuration",
+      "properties": {
+        "coc-live-server.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable coc-live-server extension"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "coc-live-server.start",
+        "title": "Start Live Server"
+      },
+      {
+        "command": "coc-live-server.stop",
+        "title": "Stop Live Server"
+      }
+    ]
+  }
+}
