@@ -27,7 +27,7 @@ export function startLiveServer() {
 
   if (liveServerProcess) {
     liveServerProcess.stdout.on('data', (data) => {
-      if (statusItem && statusItem?.text !== 'Port: ' + port) {
+      if (statusItem && statusItem?.text !== 'Live Server Port: ' + port) {
         statusItem.text = 'Live Server Port: ' + port;
       }
       const output = data.toString();
