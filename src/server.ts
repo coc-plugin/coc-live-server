@@ -28,7 +28,7 @@ export function startLiveServer() {
   if (liveServerProcess) {
     liveServerProcess.stdout.on('data', (data) => {
       if (statusItem && statusItem?.text !== 'Port: ' + port) {
-        statusItem.text = 'Port: ' + port;
+        statusItem.text = 'Live Server Port: ' + port;
       }
       const output = data.toString();
       const ansiRegex = /\x1b\[[0-9;]*m/g;
