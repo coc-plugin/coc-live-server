@@ -14,7 +14,7 @@ export function startLiveServer() {
   }
 
   statusItem = window.createStatusBarItem(0);
-  statusItem.text = 'Live Server: starting';
+  statusItem.text = 'LiveServer: starting';
   statusItem.show();
 
   if (port && typeof port === 'number') {
@@ -27,8 +27,8 @@ export function startLiveServer() {
 
   if (liveServerProcess) {
     liveServerProcess.stdout.on('data', (data) => {
-      if (statusItem && statusItem?.text !== 'Live Server Port: ' + port) {
-        statusItem.text = 'Live Server Port: ' + port;
+      if (statusItem && statusItem?.text !== `liveServer[${port}]`) {
+        statusItem.text = `liveServer[:${port}]`;
       }
       const output = data.toString();
       const ansiRegex = /\x1b\[[0-9;]*m/g;
@@ -36,7 +36,7 @@ export function startLiveServer() {
     });
     liveServerProcess.stderr.on('data', () => {
       if (statusItem) {
-        statusItem.text = 'Live Server: error';
+        statusItem.text = 'LiveServer: error';
       }
       window.showErrorMessage(
         'Failed to start coc-live-server. Please ensure live-server is installed.'
