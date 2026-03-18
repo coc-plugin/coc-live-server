@@ -1,14 +1,36 @@
-import { commands, ExtensionContext, window } from 'coc.nvim';
-import s from 'live-server';
+import { commands, ExtensionContext } from 'coc.nvim';
+import { getConfigItem } from './config';
+import {
+  liveServerProcess,
+  statusItem,
+  startLiveServer,
+  stopLiveServer,
+  toggleLiveServer,
+} from './server';
+
+process.on('exit', () => {
+  if (liveServerProcess) {
+    liveServerProcess.kill();
+  }
+  if (statusItem) {
+    statusItem.dispose();
+  }
+});
+
 export async function activate(context: ExtensionContext): Promise<void> {
+  const enabled = getConfigItem('enabled');
+  if (!enabled) {
+    return;
+  }
   context.subscriptions.push(
-    commands.registerCommand('coc-live-server.start', async () => {
-      window.showInformationMessage('coc-live-server started');
-      s.start({});
+    commands.registerCommand('coc-live-server.start', () => {
+      startLiveServer();
     }),
-    commands.registerCommand('coc-live-server.stop', async () => {
-      window.showInformationMessage('coc-live-server stopped');
-      s.shutdown();
+    commands.registerCommand('coc-live-server.stop', () => {
+      stopLiveServer();
+    }),
+    commands.registerCommand('coc-live-server.toggle', () => {
+      toggleLiveServer();
     })
   );
 }

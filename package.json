@@ -17,6 +17,7 @@
     "prepare": "node esbuild.mjs"
   },
   "devDependencies": {
+    "@types/live-server": "^1.2.3",
     "@types/node": "^25.5.0",
     "coc.nvim": "^0.0.83-next.18",
     "esbuild": "^0.19.8",
@@ -34,6 +35,11 @@
           "type": "boolean",
           "default": true,
           "description": "Enable coc-live-server extension"
+        },
+        "coc-live-server.port": {
+          "type": "number",
+          "default": 8080,
+          "description": "Port number for the live server"
         }
       }
     },
@@ -45,7 +51,14 @@
       {
         "command": "coc-live-server.stop",
         "title": "Stop Live Server"
+      },
+      {
+        "command": "coc-live-server.toggle",
+        "title": "Toggle Live Server"
       }
     ]
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
   }
 }

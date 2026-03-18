@@ -6,7 +6,7 @@ const options = {
   minify: process.env.NODE_ENV === 'production',
   sourcemap: process.env.NODE_ENV === 'development',
   mainFields: ['module', 'main'],
-  external: ['coc.nvim'],
+  external: ['coc.nvim', 'live-server'],
   platform: 'node',
   target: 'node18',
   outfile: 'lib/index.js',
