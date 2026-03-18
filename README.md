@@ -4,19 +4,21 @@ Launch a development local Server with live reload feature for static & dynamic 
 
 ## Install
 
-`:CocInstall coc-live-server`
+```vim
+:CocInstall coc-live-server
 
-## Keymaps
+```
 
-`nmap <silent> <C-l> <Plug>(coc-coc-live-server-keymap)`
+## Configuration options
 
-## Lists
+- `coc-live-server.enabled`: Enable coc-live-server extension, default: `true`
+- `coc-live-server.port`: server port, default: 8080
 
-`:CocList demo_list`
+## Commands
 
-## License
-
-MIT
+- `coc-live-server.toggle`: Toggle Live Server
+- `coc-live-server.start`: Start Live Server
+- `coc-live-server.stop`: Stop Live Server
 
 ---
 
