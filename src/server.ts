@@ -8,6 +8,7 @@ export let statusItem: StatusBarItem | null = null;
 export function startLiveServer() {
   const serverModule = require.resolve('live-server/live-server');
   const port = getConfigItem('port', 8080);
+  const STATUS = `liveServer[:${port}]`;
   const args: string[] = [];
   if (liveServerProcess) {
     stopLiveServer(false);
@@ -27,8 +28,8 @@ export function startLiveServer() {
 
   if (liveServerProcess) {
     liveServerProcess.stdout.on('data', (data) => {
-      if (statusItem && statusItem?.text !== `liveServer[${port}]`) {
-        statusItem.text = `liveServer[:${port}]`;
+      if (statusItem && statusItem?.text !== STATUS) {
+        statusItem.text = STATUS;
       }
       const output = data.toString();
       const ansiRegex = /\x1b\[[0-9;]*m/g;

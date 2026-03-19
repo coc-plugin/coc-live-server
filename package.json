@@ -1,6 +1,6 @@
 {
   "name": "coc-live-server",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Launch a development local Server with live reload feature for static & dynamic pages.",
   "author": "cyl <a1008611abcd@126.com>",
   "license": "MIT",
