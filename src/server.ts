@@ -8,6 +8,9 @@ export let statusItem: StatusBarItem | null = null;
 export function startLiveServer() {
   const serverModule = require.resolve('live-server/live-server');
   const port = getConfigItem('port', 8080);
+  const host = getConfigItem('host', '0.0.0.0');
+  const cors = getConfigItem('cors');
+  const index = getConfigItem('index', 'index.html');
   const STATUS = `liveServer[:${port}]`;
   const args: string[] = [];
   if (liveServerProcess) {
@@ -20,6 +23,18 @@ export function startLiveServer() {
 
   if (port && typeof port === 'number') {
     args.push(' --port=' + port);
+  }
+
+  if (host && typeof host === 'string') {
+    args.push(' --host=' + host);
+  }
+
+  if (cors) {
+    args.push(' --cors');
+  }
+
+  if (index && typeof index === 'string') {
+    args.push(' --index=' + index);
   }
 
   args.push(` ${workspace.root}`);

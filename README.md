@@ -12,7 +12,10 @@ Launch a development local Server with live reload feature for static & dynamic 
 ## Configuration options
 
 - `coc-live-server.enabled`: Enable coc-live-server extension, default: `true`
-- `coc-live-server.port`: server port, default: 8080
+- `coc-live-server.host`: server host, default: `0.0.0.0`
+- `coc-live-server.port`: server port, default: `8080`
+- `coc-live-server.cors`: cors, default: `false`
+- `coc-live-server.index`: index file, default: `index.html`
 
 ## Commands
 
