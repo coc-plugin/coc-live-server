@@ -15,6 +15,7 @@ Launch a development local Server with live reload feature for static & dynamic 
 - `coc-live-server.host`: server host, default: `0.0.0.0`
 - `coc-live-server.port`: server port, default: `8080`
 - `coc-live-server.cors`: cors, default: `false`
+- `coc-live-server.wait`: wait, default: `100`
 - `coc-live-server.index`: index file, default: `index.html`
 
 ## Commands
