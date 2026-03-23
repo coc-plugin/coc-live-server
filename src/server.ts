@@ -10,6 +10,7 @@ export function startLiveServer() {
   const port = getConfigItem('port', 8080);
   const host = getConfigItem('host', '0.0.0.0');
   const cors = getConfigItem('cors');
+  const wait = getConfigItem('wait', 100);
   const index = getConfigItem('index', 'index.html');
   const STATUS = `liveServer[:${port}]`;
   const args: string[] = [];
@@ -31,6 +32,10 @@ export function startLiveServer() {
 
   if (cors) {
     args.push(' --cors');
+  }
+
+  if (wait && typeof wait === 'number') {
+    args.push(' --wait=' + wait);
   }
 
   if (index && typeof index === 'string') {

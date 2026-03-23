@@ -1,6 +1,6 @@
 {
   "name": "coc-live-server",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Launch a development local Server with live reload feature for static & dynamic pages.",
   "author": "cyl <a1008611abcd@126.com>",
   "license": "MIT",
@@ -55,6 +55,11 @@
           "type": "string",
           "default": "index.html",
           "description": "Default file to serve when accessing the root URL"
+        },
+        "coc-live-server.wait": {
+          "type": "number",
+          "default": 100,
+          "description": "Wait time in milliseconds before reloading the page after a file change is detected"
         }
       }
     },
