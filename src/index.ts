@@ -23,13 +23,13 @@ export async function activate(context: ExtensionContext): Promise<void> {
     return;
   }
   context.subscriptions.push(
-    commands.registerCommand('coc-live-server.start', () => {
+    commands.registerCommand('live-server.start', () => {
       startLiveServer();
     }),
-    commands.registerCommand('coc-live-server.stop', () => {
+    commands.registerCommand('live-server.stop', () => {
       stopLiveServer();
     }),
-    commands.registerCommand('coc-live-server.toggle', () => {
+    commands.registerCommand('live-server.toggle', () => {
       toggleLiveServer();
     })
   );

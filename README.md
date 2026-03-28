@@ -21,9 +21,9 @@ Launch a development local Server with live reload feature for static & dynamic 
 
 ## Commands
 
-- `coc-live-server.toggle`: Toggle Live Server
-- `coc-live-server.start`: Start Live Server
-- `coc-live-server.stop`: Stop Live Server
+- `live-server.toggle`: Toggle Live Server
+- `live-server.start`: Start Live Server
+- `live-server.stop`: Stop Live Server
 
 ---
 

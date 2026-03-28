@@ -1,6 +1,6 @@
 {
   "name": "coc-live-server",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Launch a development local Server with live reload feature for static & dynamic pages.",
   "author": "cyl <a1008611abcd@126.com>",
   "license": "MIT",
@@ -70,15 +70,15 @@
     },
     "commands": [
       {
-        "command": "coc-live-server.start",
+        "command": "live-server.start",
         "title": "Start Live Server"
       },
       {
-        "command": "coc-live-server.stop",
+        "command": "live-server.stop",
         "title": "Stop Live Server"
       },
       {
-        "command": "coc-live-server.toggle",
+        "command": "live-server.toggle",
         "title": "Toggle Live Server"
       }
     ]
