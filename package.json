@@ -1,6 +1,6 @@
 {
   "name": "coc-live-server",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Launch a development local Server with live reload feature for static & dynamic pages.",
   "author": "cyl <a1008611abcd@126.com>",
   "license": "MIT",
@@ -50,11 +50,6 @@
           "type": "boolean",
           "default": false,
           "description": "Enable CORS for the live server"
-        },
-        "coc-live-server.index": {
-          "type": "string",
-          "default": "index.html",
-          "description": "Default file to serve when accessing the root URL"
         },
         "coc-live-server.wait": {
           "type": "number",

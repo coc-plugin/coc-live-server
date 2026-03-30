@@ -13,7 +13,6 @@ export function startLiveServer() {
   const wait = getConfigItem('wait', 100);
   const spa = getConfigItem('spa');
   const open = getConfigItem('open', true);
-  const index = getConfigItem('index', 'index.html');
   const STATUS = `liveServer[:${port}]`;
   const args: string[] = [];
   if (liveServerProcess) {
@@ -46,10 +45,6 @@ export function startLiveServer() {
 
   if (wait && typeof wait === 'number') {
     args.push(' --wait=' + wait);
-  }
-
-  if (index && typeof index === 'string') {
-    args.push(' --index=' + index);
   }
 
   args.push(` ${workspace.root}`);
