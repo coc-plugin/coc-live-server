@@ -12,6 +12,7 @@ export function startLiveServer() {
   const cors = getConfigItem('cors');
   const wait = getConfigItem('wait', 100);
   const spa = getConfigItem('spa');
+  const open = getConfigItem('open', true);
   const index = getConfigItem('index', 'index.html');
   const STATUS = `liveServer[:${port}]`;
   const args: string[] = [];
@@ -37,6 +38,10 @@ export function startLiveServer() {
 
   if (spa) {
     args.push(' --spa');
+  }
+
+  if (!open) {
+    args.push(' --no-browser');
   }
 
   if (wait && typeof wait === 'number') {

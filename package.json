@@ -65,6 +65,11 @@
           "type": "boolean",
           "default": false,
           "description": "translate requests from /abc to /#/abc (handy for Single Page Apps)"
+        },
+        "coc-live-server.open": {
+          "type": "boolean",
+          "default": true,
+          "description": "Open the browser automatically when the server starts"
         }
       }
     },
