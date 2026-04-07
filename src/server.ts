@@ -13,6 +13,7 @@ export function startLiveServer() {
   const wait = getConfigItem('wait', 100);
   const spa = getConfigItem('spa');
   const open = getConfigItem('open', true);
+  const log = getConfigItem('log', true);
   const STATUS = `liveServer[:${port}]`;
   const args: string[] = [];
   if (liveServerProcess) {
@@ -37,6 +38,10 @@ export function startLiveServer() {
 
   if (spa) {
     args.push(' --spa');
+  }
+
+  if (!log) {
+    args.push(' --quiet');
   }
 
   if (!open) {
