@@ -14,6 +14,7 @@ export function startLiveServer() {
   const spa = getConfigItem('spa');
   const open = getConfigItem('open', true);
   const log = getConfigItem('log', true);
+  const proxy = getConfigItem('proxy', '');
   const STATUS = `liveServer[:${port}]`;
   const args: string[] = [];
   if (liveServerProcess) {
@@ -50,6 +51,10 @@ export function startLiveServer() {
 
   if (wait && typeof wait === 'number') {
     args.push(' --wait=' + wait);
+  }
+
+  if (proxy && typeof proxy === 'string' && proxy.trim() !== '') {
+    args.push(' --proxy=' + proxy);
   }
 
   args.push(` ${workspace.root}`);

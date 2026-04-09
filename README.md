@@ -18,7 +18,8 @@ Launch a development local Server with live reload feature for static & dynamic 
 - `coc-live-server.wait`: Wait time in milliseconds before reloading the page after a file change is detected, default: `100`
 - `coc-live-server.spa`: translate requests from /abc to /#/abc (handy for Single Page Apps), default: `false`
 - `coc-live-server.open`: Open the browser automatically when the server starts, default: `true`
-- `coc-live-server.log`: Enable logging for the live server
+- `coc-live-server.log`: Enable logging for the live server, default: `true`
+- `coc-live-server.proxy`: proxy all requests for ROUTE to URL, default: `''`
 
 ## Commands
 
